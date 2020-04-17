@@ -30,14 +30,20 @@ function BookList() {
                 alt="Null"
                 style={{ height: "12rem" }}
               />
-              <div className="card-body" style={{ height: "9.5rem" }}>
+              <div
+                className="card-body"
+                style={{
+                  whiteSpace: "nowrap",
+                  overflowY: "hidden",
+                  height: "9.5rem",
+                }}
+              >
                 <h3
                   className="card-title"
                   style={{
+                    whiteSpace: "nowrap",
                     marginTop: "-1rem",
-                    width: "90%",
-                    height: "4.5rem",
-                    textOverflow: "ellipsis",
+                    overflowY: "hidden",
                   }}
                 >
                   {books.name}
