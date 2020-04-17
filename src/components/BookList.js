@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 //import BookCover from "../assets/duneFH.jpg";
 
 function BookList() {
-  //const apiURL = "https://www.anapioficeandfire.com/api/books/";
   const apiURL = "http://localhost:5000/book?c=20&p=1";
   const [books, setBooks] = useState([]); //can be empty but must make sure type is set
 
@@ -13,7 +12,6 @@ function BookList() {
       .then((books) => setBooks(books["result"]));
   }, []);
 
-  debugger;
   return (
     <div className="container">
       {books.map((book) => {

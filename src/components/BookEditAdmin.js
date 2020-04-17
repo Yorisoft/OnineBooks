@@ -41,6 +41,14 @@ function BookEdit(props) {
               name="isbn"
             />
             <br />
+            <label for="isbn">Number of Copies:</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Number Of Copies"
+              name="numberOfCopies"
+            />
+            <br />
             <label for="publisher">Publisher:</label>
             <input
               type="text"

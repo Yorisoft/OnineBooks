@@ -3,22 +3,20 @@ import { Link } from "react-router-dom";
 import BookCover from "../assets/duneFH.jpg";
 
 function BookList() {
-  const apiURL = "https://www.anapioficeandfire.com/api/books?pageSize=30";
+  const apiURL = "http://localhost:5000/book?c=20&p=1";
   const [books, setBooks] = useState([]); //can be empty but must make sure type is set
 
   useEffect(() => {
     fetch(apiURL)
       .then((response) => response.json())
-      .then((books) => setBooks(books));
+      .then((books) => setBooks(books["result"]));
   }, []);
 
   return (
     <div className="container">
       {books.map((books, index) => {
-        const authors = books.authors.join(", ");
-
         return (
-          <Link to={"/DetailsAdmin/" + books.name}>
+          <Link to={"/DetailsAdmin/" + books.isbn}>
             <div
               key={index}
               className="card text-center"
@@ -26,27 +24,28 @@ function BookList() {
             >
               <img
                 className="card img"
-                src={BookCover}
+                src={books.image_url_l}
                 alt="Null"
                 style={{ height: "12rem" }}
               />
               <div
                 className="card-body"
                 style={{
-                  whiteSpace: "nowrap",
-                  overflowY: "hidden",
                   height: "9.5rem",
+                  lineHeight: "2rem",
+                  overflow: "hidden",
+                  textOverflow: "ellipsis",
                 }}
               >
                 <h3
                   className="card-title"
                   style={{
-                    whiteSpace: "nowrap",
+                    lineHeight: "2rem",
                     marginTop: "-1rem",
-                    overflowY: "hidden",
+                    overflow: "hidden",
                   }}
                 >
-                  {books.name}
+                  {books.title}
                 </h3>
 
                 <p
@@ -58,7 +57,7 @@ function BookList() {
                   }}
                 >
                   {" "}
-                  By: {authors}{" "}
+                  By: {books.author}{" "}
                 </p>
               </div>
             </div>
