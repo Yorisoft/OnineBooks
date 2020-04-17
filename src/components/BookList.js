@@ -1,32 +1,33 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import BookCover from "../assets/duneFH.jpg";
+//import BookCover from "../assets/duneFH.jpg";
 
 function BookList() {
-  const apiURL = "https://www.anapioficeandfire.com/api/books/";
+  //const apiURL = "https://www.anapioficeandfire.com/api/books/";
+  const apiURL = "http://localhost:5000/book?c=20&p=1";
   const [books, setBooks] = useState([]); //can be empty but must make sure type is set
 
   useEffect(() => {
     fetch(apiURL)
       .then((response) => response.json())
-      .then((books) => setBooks(books));
+      .then((books) => setBooks(books["result"]));
   }, []);
 
   debugger;
   return (
     <div className="container">
       {books.map((book) => {
-        const authors = book.authors.join(", ");
+        const authors = book.author;
         return (
           <React.Fragment key={book.isbn}>
-            <Link to={"/books/" + book.url}>
+            <Link to={"/books/" + book.isbn}>
               <div
                 className="card text-center"
                 style={{ width: "12rem", margin: "2rem", float: "left" }}
               >
                 <img
                   className="card img"
-                  src={BookCover}
+                  src={book.image_url_l}
                   alt="Null"
                   style={{ height: "12rem" }}
                 />
@@ -40,7 +41,7 @@ function BookList() {
                       textOverflow: "ellipsis",
                     }}
                   >
-                    {book.name}
+                    {book.title}
                   </h3>
 
                   <p

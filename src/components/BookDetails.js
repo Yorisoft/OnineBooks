@@ -15,15 +15,18 @@ function BookDetails(props) {
   //     </a>
   //   );
   // };
-  //const apiURL = "https://www.anapioficeandfire.com/api/books/1" ;
+
   const [books, setBooks] = useState([]); //can be empty but must make sure type is set
 
   const str = props.history.location.pathname;
-  const n = str.length - 1;
-  const newAPI = str.charAt(n);
-
+  const end = str.length;
+  const start = str.length - 11;
+  const bookSelect = str.slice(start, end);
+  const newAPI = `http://localhost:5000/book${bookSelect}`;
+  //asdfasdfasdfasdfasd
+  //hjkfhhjg
   useEffect(() => {
-    fetch(`https://www.anapioficeandfire.com/api/books/${newAPI}`)
+    fetch(newAPI)
       .then((response) => response.json())
       .then((books) => setBooks(books));
   }, [newAPI]);
@@ -33,15 +36,15 @@ function BookDetails(props) {
       className="App"
       style={{ marginTop: "55px", textAlign: "center", height: "51rem" }}
     >
-      <h1>{books.name}</h1>
+      <h1>{books.title}</h1>
 
       <div className="books" style={{ marginTop: "55px" }}>
         <div className="book">
           <div className="details">
-            <p>👨: {books.name}</p>
-            <p>📖: {books.publisher}</p>
-            <p>🏘️: {books.mediaType}</p>
-            <p>⏰: {books.country}</p>
+            <p>Author: {books.author}</p>
+            <p>Publisher: {books.publisher}</p>
+            <p>ISBN: {books.isbn}</p>
+            <p>Published In: {books.year_of_publication}</p>
           </div>
         </div>
       </div>
