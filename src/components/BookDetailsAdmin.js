@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { Jumbotron, Col, Row } from "react-bootstrap";
+import { Jumbotron } from "react-bootstrap";
 
 function DeatilsAdmin(props) {
   const str = props.history.location.pathname;

@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { withAlert } from "react-alert";
-import { Link } from "react-router-dom";
 import { Jumbotron, Col, Row } from "react-bootstrap";
 
 function BookDetails(props) {
@@ -75,7 +73,7 @@ function BookDetails(props) {
           </button>
         </Col>
         <Col xs={7}>
-          <img src={books.image_url_l} style={{ marginLeft: "20rem" }} />
+          <img src={books.image_url_l} alt="" style={{ marginLeft: "20rem" }} />
         </Col>
       </Row>
     </Jumbotron>
