@@ -7,8 +7,8 @@ const BookEdit = (props) => {
     author: "",
     title: "",
     publisher: "",
-    number_of_copies: 0,
-    year_of_publication: 0,
+    number_of_copies: null,
+    year_of_publication: null,
   });
 
   function handleUpdate({ target }) {
