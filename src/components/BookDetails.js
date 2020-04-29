@@ -110,9 +110,3 @@ function addBook(isbn) {
 }
 
 export default BookDetails;
-
-// {props.map((book) => { src={books.image_url_l}
-//  return (
-//
-//    );
-// })}

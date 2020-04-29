@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-//import BookCover from "../assets/duneFH.jpg";
 
 function BookList() {
   const apiURL = "http://localhost:5000/book?c=20&p=1";
@@ -45,7 +44,6 @@ function BookList() {
                   >
                     {book.title}
                   </h3>
-
                   <p
                     className="card-text text-secondary"
                     style={{
@@ -54,8 +52,7 @@ function BookList() {
                       textOverflow: "ellipsis",
                     }}
                   >
-                    {" "}
-                    By: {authors}{" "}
+                    By: {authors}
                   </p>
                 </div>
               </div>

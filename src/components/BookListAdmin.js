@@ -13,52 +13,51 @@ function BookList() {
 
   return (
     <div className="container">
-      {books.map((books, index) => {
+      {books.map((books) => {
         return (
-          <Link to={"/DetailsAdmin/" + books.isbn}>
-            <div
-              key={index}
-              className="card text-center"
-              style={{ width: "12rem", margin: "2rem", float: "left" }}
-            >
-              <img
-                className="card img"
-                src={books.image_url_l}
-                alt="Null"
-                style={{ height: "12rem" }}
-              />
+          <React.Fragment key={books.isbn}>
+            <Link to={"/DetailsAdmin/" + books.isbn}>
               <div
-                className="card-body"
-                style={{
-                  height: "9.5rem",
-                }}
+                className="card text-center"
+                style={{ width: "12rem", margin: "2rem", float: "left" }}
               >
-                <h3
-                  className="card-title"
+                <img
+                  className="card img"
+                  src={books.image_url_l}
+                  alt="Null"
+                  style={{ height: "12rem" }}
+                />
+                <div
+                  className="card-body"
                   style={{
-                    marginTop: "-1rem",
-                    whiteSpace: "nowrap",
-                    overflow: "hidden",
-                    textOverflow: "ellipsis",
+                    height: "9.5rem",
                   }}
                 >
-                  {books.title}
-                </h3>
-
-                <p
-                  className="card-text text-secondary"
-                  style={{
-                    marginTop: "1.8rem",
-                    width: "90%",
-                    textOverflow: "ellipsis",
-                  }}
-                >
-                  {" "}
-                  By: {books.author}{" "}
-                </p>
+                  <h3
+                    className="card-title"
+                    style={{
+                      marginTop: "-1rem",
+                      whiteSpace: "nowrap",
+                      overflow: "hidden",
+                      textOverflow: "ellipsis",
+                    }}
+                  >
+                    {books.title}
+                  </h3>
+                  <p
+                    className="card-text text-secondary"
+                    style={{
+                      marginTop: "1.8rem",
+                      width: "90%",
+                      textOverflow: "ellipsis",
+                    }}
+                  >
+                    By: {books.author}
+                  </p>
+                </div>
               </div>
-            </div>
-          </Link>
+            </Link>
+          </React.Fragment>
         );
       })}
     </div>

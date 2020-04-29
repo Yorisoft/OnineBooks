@@ -42,6 +42,7 @@ function DeatilsAdmin(props) {
       </button>
       <button
         className="btn btn-danger"
+        style={{ marginLeft: "10px" }}
         onClick={() => deleteBook(books.isbn, books.number_of_copies)}
       >
         -1

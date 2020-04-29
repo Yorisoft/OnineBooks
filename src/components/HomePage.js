@@ -30,8 +30,7 @@ function HomePage() {
         <br /> <br /> <h3 style={welcome}> (づ｡◕‿‿◕｡)づ </h3>
       </Jumbotron>
       <h3 style={{ marginLeft: "3rem", color: "#17a2b8" }}>
-        {" "}
-        Explore our entire collection{" "}
+        Explore our entire collection
       </h3>
       <BookList />
     </div>

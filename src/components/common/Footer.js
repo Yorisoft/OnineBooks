@@ -22,7 +22,7 @@ function Footer() {
     <div className="container-fluid" style={styles}>
       <Row>
         <Col xs={7} style={{ marginTop: "2rem" }}>
-          <a href="#" style={logo}>
+          <a href="/" style={logo}>
             Books & Coffee Shop
           </a>
         </Col>

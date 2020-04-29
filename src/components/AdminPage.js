@@ -12,7 +12,11 @@ function AdminPage() {
     backgroundImage: `url(${CenterImage})`,
     backgroundSize: "cover",
   };
-  const adminText = { marginTop: "22rem", color: "#FFEB3B", fontSize: "70px" };
+  const adminText = {
+    marginTop: "22rem",
+    color: "#FFEB3B",
+    fontSize: "70px",
+  };
 
   return (
     <>
