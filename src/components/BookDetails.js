@@ -25,13 +25,14 @@ function BookDetails(props) {
         <Col
           style={{
             marginTop: "4rem",
-            marginLeft: "30rem",
+            marginLeft: "10rem",
             textAlign: "center",
             height: "40rem",
           }}
         >
           <h1>{books.title}</h1>
           <h4>by: {books.author}</h4>
+          <h5>{books.number_of_copies} copies on hand</h5>
 
           <div
             className="books"
@@ -45,6 +46,9 @@ function BookDetails(props) {
           </div>
           <Link to="/">
             <button className="btn btn-primary"> Reserve Book </button>
+          </Link>
+          <Link to="/">
+            <button className="btn btn-success"> Return Book </button>
           </Link>
         </Col>
         <Col xs={7}>

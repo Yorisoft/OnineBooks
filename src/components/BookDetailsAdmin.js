@@ -34,14 +34,39 @@ function DeatilsAdmin(props) {
           </div>
         </div>
       </div>
-      <Link to="/bookEditAdmin">
-        <button className="btn btn-success"> +1</button>
-        <button className="btn btn-danger"> -1 </button>
-      </Link>
-      <Link to="/bookEditAdmin" style={{ marginLeft: "1rem" }}>
-        <button className="btn btn-primary"> Edit Library</button>
-      </Link>
+
+      <button className="btn btn-success" onClick={() => addBook(books.isbn)}>
+        +1
+      </button>
+      <button className="btn btn-danger" onClick={() => deleteBook(books.isbn)}>
+        -1
+      </button>
     </Jumbotron>
   );
 }
+
+function deleteBook(isbn) {
+  window.location.reload(true);
+  // Deletes books
+  fetch(`http://localhost:5000/inventory/loan/book/${isbn}`, {
+    method: "put",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ loans: 1 }), //property name : value
+  })
+    .then((response) => response.json())
+    .then((books) => console.log(books));
+}
+
+function addBook(isbn) {
+  window.location.reload(true);
+  // Adds books
+  fetch(`http://localhost:5000/inventory/return/book/${isbn}`, {
+    method: "put",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ returns: 1 }), //property name : value
+  })
+    .then((response) => response.json())
+    .then((books) => console.log(books));
+}
+
 export default DeatilsAdmin;
