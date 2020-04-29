@@ -17,6 +17,8 @@ const BookEdit = (props) => {
   }
 
   function updateLibrary() {
+    console.log(book);
+
     fetch("http://localhost:5000/book", {
       method: "post",
       headers: { "Content-Type": "application/json" },
@@ -31,8 +33,6 @@ const BookEdit = (props) => {
     })
       .then((response) => response.json())
       .then((book) => console.log(book));
-
-    console.log(book);
   }
 
   return (
