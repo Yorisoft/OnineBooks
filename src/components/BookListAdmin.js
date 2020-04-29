@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import BookCover from "../assets/duneFH.jpg";
 
 function BookList() {
   const apiURL = "http://localhost:5000/book?c=20&p=1";
@@ -32,17 +31,15 @@ function BookList() {
                 className="card-body"
                 style={{
                   height: "9.5rem",
-                  lineHeight: "2rem",
-                  overflow: "hidden",
-                  textOverflow: "ellipsis",
                 }}
               >
                 <h3
                   className="card-title"
                   style={{
-                    lineHeight: "2rem",
                     marginTop: "-1rem",
+                    whiteSpace: "nowrap",
                     overflow: "hidden",
+                    textOverflow: "ellipsis",
                   }}
                 >
                   {books.title}

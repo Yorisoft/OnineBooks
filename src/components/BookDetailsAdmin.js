@@ -20,32 +20,43 @@ function DeatilsAdmin(props) {
     <Jumbotron
       style={{ marginTop: "55px", textAlign: "center", height: "45rem" }}
     >
-      <h4> This is the detail-editing page for {books.title} </h4>
-      <h4>{books.number_of_copies}</h4>
+      <h4> This is the detail-editing page for </h4>
+      <h1>{books.title}</h1>
 
       <div className="books" style={{ marginTop: "55px" }}>
         <div className="book">
-          <h5>{books.title}</h5>
-          <h5>Publisher: {books.author}</h5>
+          <h5>On hand: {books.number_of_copies}</h5>
+          <h5>ISBN: {books.isbn}</h5>
           <div className="details">
             <p>Publisher: {books.publisher}</p>
-            <p>ISBN: {books.isbn}</p>
+            <p>Author: {books.author}</p>
             <p>Published In: {books.year_of_publication}</p>
           </div>
         </div>
       </div>
 
-      <button className="btn btn-success" onClick={() => addBook(books.isbn)}>
+      <button
+        className="btn btn-success"
+        onClick={() => addBook(books.isbn, books.number_of_copies)}
+      >
         +1
       </button>
-      <button className="btn btn-danger" onClick={() => deleteBook(books.isbn)}>
+      <button
+        className="btn btn-danger"
+        onClick={() => deleteBook(books.isbn, books.number_of_copies)}
+      >
         -1
       </button>
     </Jumbotron>
   );
 }
 
-function deleteBook(isbn) {
+function deleteBook(isbn, count) {
+  if (count < 1) {
+    alert("Store already has 0 on hand");
+    return;
+  }
+
   window.location.reload(true);
   // Deletes books
   fetch(`http://localhost:5000/inventory/loan/book/${isbn}`, {

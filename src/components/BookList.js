@@ -21,7 +21,11 @@ function BookList() {
             <Link to={"/books/" + book.isbn}>
               <div
                 className="card text-center"
-                style={{ width: "12rem", margin: "2rem", float: "left" }}
+                style={{
+                  width: "12rem",
+                  margin: "2rem",
+                  float: "left",
+                }}
               >
                 <img
                   className="card img"
@@ -34,8 +38,8 @@ function BookList() {
                     className="card-title"
                     style={{
                       marginTop: "-1rem",
-                      width: "90%",
-                      height: "4.5rem",
+                      whiteSpace: "nowrap",
+                      overflow: "hidden",
                       textOverflow: "ellipsis",
                     }}
                   >
