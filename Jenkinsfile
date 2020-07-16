@@ -1,4 +1,4 @@
-node ('worker'){
+/* node ('worker'){
     cleanWs()
 
     def image
@@ -19,3 +19,16 @@ node ('worker'){
     }
     
 }
+ */
+#!/users/bin/env groovy
+
+node{
+    cleanWs();
+    
+    def image
+    def pipeline
+    
+    currentStage = 'Setup'
+    stage(currentStage){
+git credentialsId: 'cred-git', url: 'https://github.com/Hack-Diversity/cscl-team4-frontend.git'
+    }
