@@ -22,7 +22,7 @@ function BookDetails(props) {
   const bookSelect = str.slice(start, end);
   const newAPI = `http://localhost:5000/book${bookSelect}`;
 
-  const [books, setBooks] = useState([]); //can be empty but must make sure type is set
+  const [books, setBooks] = useState([]); //can be emptyyy but must make sure type is set
   useEffect(() => {
     fetch(newAPI)
       .then((response) => response.json())
