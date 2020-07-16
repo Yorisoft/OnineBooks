@@ -26,12 +26,12 @@ function Header() {
               Home
             </Nav.Link>
           </NavItem>
-          <NavItem eventkey={2} href="/about">
+          {/* <NavItem eventkey={2} href="/about">
             <Nav.Link as={Link} to="/about">
               About
             </Nav.Link>
-          </NavItem>
-          <NavItem eventkey={3} href="/admin">
+  </NavItem>*/}
+          <NavItem eventkey={2} href="/admin">
             <Nav.Link as={Link} to="/admin">
               Admin
             </Nav.Link>
