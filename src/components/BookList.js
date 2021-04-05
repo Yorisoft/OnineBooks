@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 function BookList() {
-  const apiURL = "http://localhost:5000/book?c=20&p=1";
+  const apiURL = "https://anapioficeandfire.com/api/characters/5";
   const [books, setBooks] = useState([]); //can be empty but must make sure type is set
 
   useEffect(() => {
